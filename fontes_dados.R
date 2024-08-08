@@ -1,5 +1,5 @@
 #### 0. CONFIGURAR O AMBIENTE ####
-# 0.1 Carregar pacotes necessários ####
+## 0.1 Carregar pacotes necessários ####
 library(readxl)
 library(tidyverse)
 library(googledrive)
@@ -13,16 +13,22 @@ library(geobr)
 ## 0.2 Notas ####
 # Talvez usar dados espaciais depois: https://github.com/ipeaGIT/geobr
 
-## 1. Dados IBGE - demografia, saúde e educação  ####
+#### 1. IBGE  ####
 
-## 1.1 SIDRAR ####
+## 1.1 SIDRA ####
+# https://sidra.ibge.gov.br/home/pms/brasil >>> /PESQUISAS
+# Fonte original, com dados até o Censo 2022.
+
+
+
+## 1.2 SIDRAR ####
 # https://cran.r-project.org/web/packages/sidrar/vignettes/Introduction_to_sidrar.html
 # search_sidra(c("gini"))
 # https://sidra.ibge.gov.br/home/pimpfbr/brasil
 
 # (=) Apenas dados econômicos
 
-## 1.2 GEOBR ####
+## 1.3 GEOBR ####
 # https://github.com/ipeaGIT/geobr
 
 ## Dados Geográficos - Municípios SP ####
@@ -34,6 +40,17 @@ str(geo_sp)
 summary(geo_sp)
 # - Informações geográficas básicas.
 # - COLUNAS úteis: \geom (coordenadas dos municípios)
+
+## Dados Demográficos - Municípios SP ####
+# Período: 2015
+demog_sp <- read_pop_arrangements() %>% 
+  filter(abbrev_state=='SP')
+demog_sp
+
+str(demog_sp)
+summary(demog_sp)
+# - Informações demográficas básicas.
+# - COLUNAS úteis: \pop_total_2010, \pop_urban_2010 e \pop_rural_2010
 
 ## Dados Saúde - Municípios SP ####
 # Período: Mar/2023
@@ -63,7 +80,7 @@ summary(educ_sp)
 # ou privada)
 
 
-## 1.3 MUNIC ####
+## 1.4 MUNIC ####
 #https://sidra.ibge.gov.br/pesquisa/munic/tabelas
 
 
