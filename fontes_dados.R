@@ -26,22 +26,42 @@ library(geobr)
 # https://github.com/ipeaGIT/geobr
 
 ## Dados Geográficos - Municípios SP ####
+# Período: 2022
 geo_sp <- read_municipality(code_muni='SP', year=2022)
 geo_sp
 
 str(geo_sp)
 summary(geo_sp)
-#informações geográficas básicas.
+# - Informações geográficas básicas.
+# - COLUNAS úteis: \geom (coordenadas dos municípios)
 
 ## Dados Saúde - Municípios SP ####
+# Período: Mar/2023
 saude_sp <- read_health_facilities() %>% 
   filter(abbrev_state=='SP')
 saude_sp
 
 str(saude_sp)
 summary(saude_sp)
-#dados geograficos e estrutura (em centros de especialidades - cirugia, exames) 
+# - Dados geograficos e estrutura (em centros de especialidades - cirugia, exames) 
 # de estabelecimentos de saúde.
+# - COLUNAS úteis: as que começam com \'st' e \'co' aparentemente indicam se há ou não (são binárias)
+#algum tipo de estrutura física ou humana no estabelecimento de saúde.
+
+## Dados Educação - Municípios SP ####
+# Período: 2020
+educ_sp <- read_schools() %>% 
+  filter(abbrev_state=='SP')
+educ_sp
+
+str(educ_sp)
+summary(educ_sp)
+
+# - Dados geograficos e estrutura das escolas.
+# - COLUNAS úteis: \education_level (tipo da escola: infantil, adultos, médio, 
+# elementar, mista etc), \government_level (estadual, federal, municipal 
+# ou privada)
+
 
 ## 1.3 MUNIC ####
 #https://sidra.ibge.gov.br/pesquisa/munic/tabelas
