@@ -10,10 +10,10 @@ library(hrbrthemes)
 library(sidrar)
 library(geobr)
 
-## NOTAS ####
+## 0.2 Notas ####
 # Talvez usar dados espaciais depois: https://github.com/ipeaGIT/geobr
 
-## IBGE (MUNIC; SIDRA): demografia, saúde e educação  ####
+## 1. Dados IBGE - demografia, saúde e educação  ####
 
 ## SIDRAR ####
 # https://cran.r-project.org/web/packages/sidrar/vignettes/Introduction_to_sidrar.html
