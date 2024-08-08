@@ -15,15 +15,23 @@ library(geobr)
 
 ## 1. Dados IBGE - demografia, saúde e educação  ####
 
-## SIDRAR ####
+## 1.1 SIDRAR ####
 # https://cran.r-project.org/web/packages/sidrar/vignettes/Introduction_to_sidrar.html
 # search_sidra(c("gini"))
 # https://sidra.ibge.gov.br/home/pimpfbr/brasil
-# Apenas dados econômicos
 
-## GEOBR ####
+# (=) Apenas dados econômicos
+
+## 1.2 GEOBR ####
 # https://github.com/ipeaGIT/geobr
 
+## Dados do estado de SP
+sp <- read_municipality(code_muni='SP', year=2022)
+str(sp)
+summary(sp)
+# Apenas informações geográficas básicas
+
+read_health_facilities()
 
 ## MUNIC ####
 #https://sidra.ibge.gov.br/pesquisa/munic/tabelas
