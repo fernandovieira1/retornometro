@@ -25,15 +25,25 @@ library(geobr)
 ## 1.2 GEOBR ####
 # https://github.com/ipeaGIT/geobr
 
-## Dados do estado de SP
-sp <- read_municipality(code_muni='SP', year=2022)
-str(sp)
-summary(sp)
-# Apenas informações geográficas básicas
+## Dados Geográficos - Municípios SP ####
+geo_sp <- read_municipality(code_muni='SP', year=2022)
+geo_sp
 
-read_health_facilities()
+str(geo_sp)
+summary(geo_sp)
+#informações geográficas básicas.
 
-## MUNIC ####
+## Dados Saúde - Municípios SP ####
+saude_sp <- read_health_facilities() %>% 
+  filter(abbrev_state=='SP')
+saude_sp
+
+str(saude_sp)
+summary(saude_sp)
+#dados geograficos e estrutura (em centros de especialidades - cirugia, exames) 
+# de estabelecimentos de saúde.
+
+## 1.3 MUNIC ####
 #https://sidra.ibge.gov.br/pesquisa/munic/tabelas
 
 
