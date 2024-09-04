@@ -83,4 +83,16 @@ summary(educ_sp)
 ## 1.4 MUNIC ####
 #https://sidra.ibge.gov.br/pesquisa/munic/tabelas
 
+# Consultar um subconjunto de municípios
+resultado_subconjunto <- get_sidra(9701,
+                                   variable = 12833,
+                                   period = '2021',
+                                   geo = 'City',
+                                   geo.filter = list('City' = c(3500105, 3500204)),  # Exemplo de dois municípios de SP
+                                   classific = "c1526",  # Quantidade de creches municipais
+                                   category = list("c1526" = 58853))  # Municípios com 1 a 20 creches
 
+print(resultado_subconjunto)
+
+
+          
