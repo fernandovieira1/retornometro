@@ -83,16 +83,23 @@ summary(educ_sp)
 ## 1.4 MUNIC ####
 #https://sidra.ibge.gov.br/pesquisa/munic/tabelas
 
-# Consultar um subconjunto de municípios
-resultado_subconjunto <- get_sidra(9701,
-                                   variable = 12833,
-                                   period = '2021',
-                                   geo = 'City',
-                                   geo.filter = list('City' = c(3500105, 3500204)),  # Exemplo de dois municípios de SP
-                                   classific = "c1526",  # Quantidade de creches municipais
-                                   category = list("c1526" = 58853))  # Municípios com 1 a 20 creches
+regiao <- c(1,5)
+tabela <- data.frame()
 
-print(resultado_subconjunto)
+for(i in regiao){
+  x <- get_sidra(x = 1612, # código da tabela no Sidra
+                 geo = 'City', # nível de detalhe espacial da informação
+                 geo.filter = list("Region" = i), #região
+                 variable = 215, # variável de interesse
+                 period = as.character(2020) # ano dos dados
+  )
+  tabela <- rbind(tabela,x)
+}
+x <- datatable(tabela)
 
-
+get_sidra(x = 1612, # código da tabela no Sidra
+          geo = 'City', # nível de detalhe espacial da informação
+          geo.filter = list("Region" = 1), #região
+          variable = 215, # variável de interesse
+          period = as.character(2020)) # ano dos dados
           
