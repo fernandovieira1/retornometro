@@ -28,26 +28,26 @@ FASE II – COLETA E ANÁLISE DAS INFORMAÇÕES
 
 ## VARIÁVEIS
 
-* População:
+* 1. População:
     - População dos municípios
     - 2021
     - https://sidra.ibge.gov.br/tabela/6579
     
-* Receita municipal
+* 2. Receita municipal
     - Receita tributária Direta
     - Receita tributária Indireta
     - PIB
 
-* Educação: 
+* 3. Educação: 
     - Notas SAEB (2º e 9º ano - escolas municipais)
     - OU: Creches/População ou Creches/Crianças
     - OU: Crianças de 0 a 3 que frequentam creches
     
-* Saúde: 
+* 4. Saúde: 
     - Equipes de atenção básica
     - Número de médicos
 
-* Saneamento
+* 5. Saneamento
     - Percentual de domicílios com rede de água e esgoto
     - Percentual de domicílios com coleta de lixo
 
