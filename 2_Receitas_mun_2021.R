@@ -116,12 +116,12 @@ df2
 df2 <- df2 %>%
   group_by(cidade, cod_ibge, uf, populacao) %>%  # Incluímos a coluna 'populacao' no agrupamento
   summarise(
-    receita_liquida = sum(valor[tipo_receita == "Receitas Brutas Realizadas"]) - 
-      sum(valor[tipo_receita %in% c("Deduções - FUNDEB", "Deduções - Transferências Constitucionais", "Outras Deduções da Receita")]),
+    receita_liquida = sum(valor[tipo_receita == 'Receitas Brutas Realizadas']) - 
+      sum(valor[tipo_receita %in% c('Deduções - FUNDEB', 'Deduções - Transferências Constitucionais', 'Outras Deduções da Receita')]),
     .groups = 'drop'
   ) %>%
   # Adicionar a Receita Líquida como uma nova linha no dataframe original
-  mutate(tipo_receita = "Receita Liquida do Municipio", valor = receita_liquida) %>%
+  mutate(tipo_receita = 'Receita Liquida do Municipio', valor = receita_liquida) %>%
   select(-receita_liquida) %>%
   bind_rows(df2, .) %>%
   arrange(cidade, `tipo_receita`)  # Corrigido também para manter a consistência no nome da coluna 'tipo_receita'
