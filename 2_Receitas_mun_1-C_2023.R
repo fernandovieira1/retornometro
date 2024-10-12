@@ -1,7 +1,7 @@
 ### RECEITAS ###
-# - Fonte(s):Finbra/STN
+# - Fonte(s):Finbra/STN (NEXO 1-C)
 # - Descrição: Arrecadação municipal Direta e Indireta
-# * Exercicio: 2021
+# * Exercicio: 2023
 # Baixei duas versoes do arquivo para confirmas os problemas com valores negativos ou NA (seção 0.6)
 
 #### 0. Carregar ambiente ####

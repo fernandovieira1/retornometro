@@ -1,7 +1,7 @@
 library(tidyverse)
 library(readxl)
 
-df <- read_excel('C:\\Users\\ferna\\OneDrive\\5. Trabalho\\Expediente\\Ativos\\Consultoria\\Retornometro\\DADOS\\Tabela 6579 POPULACAO.xlsx',
+df <- read_excel('C:\\Users\\ferna\\OneDrive\\5. Trabalho\\Expediente\\Ativos\\Consultoria\\Retornometro\\DADOS\\1_POPULACAO_IBGE_Tabela-6579.xlsx',
                       skip = 3)
 colnames(df) <- c('municipio', 'populacao')
 
