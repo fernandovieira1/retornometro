@@ -7,7 +7,7 @@
 #### 0. Carregar ambiente ####
 library(tidyverse)
 library(readr)
-df <- read_csv2('C:\\Users\\ferna\\OneDrive\\5. Trabalho\\Expediente\\Ativos\\Consultoria\\Retornometro\\DADOS\\2_RECEITA_Finbra_1-c_2021_v2.csv',
+df <- read_csv2('C:\\Users\\ferna\\OneDrive\\5. Trabalho\\Expediente\\Ativos\\Consultoria\\Retornometro\\DADOS\\2_RECEITA_Finbra_1-c_2023.csv',
                locale = locale(encoding = 'windows-1252'),
                skip = 3)
 df
@@ -46,7 +46,7 @@ df <- as_tibble(df)
 df
 
 #### 0.3 Conhecer cada coluna ####
-table(df$tipo_receita)
+table(df$tipo_receita) # esta sera a coluna base para criar a variavel
 # table(df$conta)
 
 #### 0.4 Reorganizar df
@@ -132,18 +132,19 @@ df2
 summary(df2)
 
 # Valores negativos
-df2 %>% filter(valor < 0) # Aqui apareceu negativo (nova ubirata-MT, e Varjao de Minas-MG)
+df2 %>% filter(valor < 0) # Aqui apareceu negativo (Dois Riachos-AL, e Ipu-CE)
 
 # Valores 0
-df2 %>% filter(valor == 0) # apenas deduções de receira -- ok
+df2 %>% filter(valor == 0) # deduções de receita -- ok; RL do mun: Minas Novas-MG e Silvianópolis-MG
 
 # Valores NA
 df2 %>% filter(is.na(valor))
-df2 %>% filter(is.na(valor)) %>% summarise(total_cidades = n_distinct(cidade)) # 50 cidades com NA
+df2 %>% filter(is.na(valor)) %>% summarise(total_cidades = n_distinct(cidade)) # 68 cidades com NA
 # View(df2 %>% filter(is.na(valor)))
 
 # (!!!) Investigar motivos dessas cidades com NA e valores negativos ou 0
 
 ## O brasil possui 5571 municipio
-df %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5281
-df2 %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5281
+df %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5215
+df2 %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5215
+
