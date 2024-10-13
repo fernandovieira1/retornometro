@@ -49,7 +49,7 @@ df
 table(df$tipo_receita)
 # table(df$conta)
 
-#### 0.4 Reorganizar df
+#### 0.4 Reorganizar df ####
 
 # Remover coluna 'id_conta' 
 # (verificar em um segundo momento se pode impactar -- acho que não!)
