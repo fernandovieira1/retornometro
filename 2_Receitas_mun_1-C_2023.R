@@ -148,3 +148,4 @@ df2 %>% filter(is.na(valor)) %>% summarise(total_cidades = n_distinct(cidade)) #
 df %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5215
 df2 %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5215
 
+## FALTA SUBTRAIR AS DEDUÇÕES

@@ -147,3 +147,5 @@ df2 %>% filter(is.na(valor)) %>% summarise(total_cidades = n_distinct(cidade)) #
 ## O brasil possui 5571 municipio
 df %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5281
 df2 %>% summarise(total_cidades = n_distinct(cidade)) # aqui, 5281
+
+## FALTA SUBTRAIR AS DEDUÇÕES
